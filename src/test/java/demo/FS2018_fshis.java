@@ -32,7 +32,7 @@ public class FS2018_fshis {
         assertTrue(true);
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testInterface() {
         //获得所有接口，页面左侧的41个链接
         List<WebElement> interfaces =dr.findElements(By.cssSelector(".apimain_a a"));
@@ -64,17 +64,22 @@ public class FS2018_fshis {
 
             if (resultText.contains("\"Code\": \"EMI_R_00\"")){
                 countR++;
-                System.out.println("countR="+countR);
             }
             if (resultText.contains("\"Code\": \"EMI_E_")){
                 countE++;
                 System.out.println("countE="+countE+"==================\n"+title.getText());
             }
         }
+        System.out.println("countR="+countR);
     }
 
     @AfterClass
     public static void tearDown(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         dr.quit();
     }
 }

@@ -33,7 +33,7 @@ public class FS2018Test {
         assertTrue(false);
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testInterface() {
         List<WebElement> parDiv =dr.findElements(By.className("none-table"));
         WebElement title,testBtn, submitBtn, result;
@@ -56,17 +56,22 @@ public class FS2018Test {
 
             if (resultText.contains("\"Code\":\"EMI_R_00")){
                 countR++;
-                System.out.println("countR="+countR);
             }
             if (resultText.contains("\"Code\":\"EMI_E_")){
                 countE++;
                 System.out.println("countE="+countE+"==================\n"+title.getText());
             }
         }
+        System.out.println("countR="+countR);
     }
 
     @AfterClass
     public static void tearDown(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         dr.quit();
     }
 }

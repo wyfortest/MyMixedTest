@@ -3,7 +3,7 @@
     <test name="几个接口汇总页面的测试">
         <classes>
             <class name="demo.FS2018Test"/>
-            <class name="demo.FS2018_fshis"/>
+            <class name="demo.FS2018fshisTest"/>
         </classes>
     </test>
 </suite>

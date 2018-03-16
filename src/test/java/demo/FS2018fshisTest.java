@@ -18,7 +18,7 @@ import static org.testng.Assert.assertTrue;
  * @author: WangYu
  * @date: 2018/3/14
  */
-public class FS2018_fshis {
+public class FS2018fshisTest {
     private static WebDriver dr;
 
     @BeforeClass

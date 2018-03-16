@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="对‘2018_FSDataCenterAPI_Git’项目的部分测试">
+    <test name="几个接口汇总页面的测试">
+        <classes>
+            <class name="demo.FS2018Test"/>
+            <class name="demo.FS2018_fshis"/>
+        </classes>
+    </test>
+</suite>

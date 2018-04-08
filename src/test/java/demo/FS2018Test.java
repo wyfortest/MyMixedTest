@@ -43,7 +43,9 @@ public class FS2018Test {
 
         for (int i=1; i<parDiv.size()-3; i++) {
             title = parDiv.get(i).findElement(By.cssSelector(".search"));
+            //TODO: 用链接文字定位，总是乱码，尚未解决
             testBtn = parDiv.get(i).findElement(By.linkText("测试"));
+            //testBtn = parDiv.get(i).findElement(By.cssSelector("a#btn"));
             testBtn.click();
 
             submitBtn = parDiv.get(i).findElement(By.tagName("button"));
@@ -56,13 +58,16 @@ public class FS2018Test {
 
             if (resultText.contains("\"Code\":\"EMI_R_00")){
                 countR++;
-            }
-            if (resultText.contains("\"Code\":\"EMI_E_")){
+            }else if (resultText.contains("\"Code\":\"EMI_E_")){
                 countE++;
-                System.out.println("countE="+countE+"==================\n"+title.getText());
+                System.out.println(title.getText());
+            }else{
+                countE++;
+                System.out.println(resultText);
             }
         }
         System.out.println("countR="+countR);
+        System.out.println("countE="+countE);
     }
 
     @AfterClass
